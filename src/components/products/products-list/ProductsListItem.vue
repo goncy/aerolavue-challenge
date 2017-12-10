@@ -6,7 +6,7 @@
         <span>{{product.cost}}</span>
         <coin v-if="affordable" class="coin" width="20" height="20"></coin>
       </touchable>
-      <img class="image" :src="product.img.url" :alt="product.name">
+      <img class="image" :src="product.img.url" @error="imageFailed" :alt="product.name">
       <hr>
       <div class="bottom">
         <span class="category">{{product.category}}</span>
@@ -33,6 +33,12 @@ export default {
   computed: {
     affordable() {
       return this.balance - this.product.cost >= 0
+    }
+  },
+  methods: {
+    imageFailed(event) {
+      event.target.src =
+        "http://via.placeholder.com/252x182/ffffff?text=NO%20IMAGE"
     }
   }
 }
