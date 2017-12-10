@@ -1,29 +1,36 @@
 <template>
   <div id="overlay">
-    <div v-if="false" class="close">
+    <div @click.stop="unsetProduct()" class="close">
       <img src="../../../assets/close.svg" alt="">
     </div>
     <div class="balance">
       <div class="content">
-        <span class="current">{{balance}}</span>
+        <span class="current">{{points}}</span>
         <span class="cost">- {{cost}}</span>
         <hr>
         <div class="final">
-          <span>{{finalBalance}}</span>
+          <span>{{balance}}</span>
           <coin class="coin" width="25" height="25"></coin>
         </div>
       </div>
     </div>
-    <touchable @click.native="redeem" v-if="finalBalance >= 0" class="redeem" type="primary-inverted">
+    <touchable
+      @click.native="redeem"
+      v-if="balance >= 0"
+      class="redeem"
+      type="primary-inverted"
+    >
       <transition name="redeem-button" mode="out-in">
-        <span v-if="!$root.$data.loading.transaction">REDEEM NOW</span>
-        <spinner class="spinner" v-if="$root.$data.loading.transaction" />
+        <span v-if="!loading">REDEEM NOW</span>
+        <spinner class="spinner" v-if="loading" />
       </transition>
     </touchable>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex"
+
 import Coin from "../../../components/Coin"
 import Touchable from "../../../components/Touchable"
 import Spinner from "../../../components/Spinner"
@@ -32,19 +39,23 @@ export default {
   components: { Coin, Touchable, Spinner },
   props: {
     cost: Number,
-    balance: Number
+    points: Number,
+    loading: Boolean
   },
   computed: {
-    finalBalance() {
-      return this.balance - this.cost
+    balance() {
+      return this.points - this.cost
     }
   },
   methods: {
+    ...mapMutations(["unsetProduct"]),
     redeem() {
-      this.$root.$data.loading.transaction = true
+      if (this.loading) return
+
+      this.$store.commit("startTransaction")
       setTimeout(() => {
-        this.$root.$data.user.points -= this.cost
-        this.$root.$data.loading.transaction = false
+        this.$store.commit("substractPoints", this.cost)
+        this.$store.commit("stopTransaction")
       }, 5000)
     }
   }

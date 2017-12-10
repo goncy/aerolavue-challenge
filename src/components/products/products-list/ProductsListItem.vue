@@ -1,8 +1,13 @@
 <template>
   <div id="products-list-item" :class="{selected, affordable}">
-    <overlay :balance="balance" :cost="product.cost" :class="{selected, affordable}"></overlay>
+    <overlay
+      :loading="loading"
+      :points="points"
+      :cost="product.cost"
+      :class="{selected, affordable}"
+    />
     <div class="content">
-      <touchable :type="affordable ? 'primary-inverted' : 'default'" :class="['price', {affordable}]">
+      <touchable :type="affordable ? 'primary-inverted' : 'default'" :class="['cost', {affordable}]">
         <span>{{product.cost}}</span>
         <coin v-if="affordable" class="coin" width="20" height="20"></coin>
       </touchable>
@@ -27,12 +32,12 @@ export default {
   props: {
     product: Object,
     selected: Boolean,
-    balance: Number,
-    close: Function
+    loading: Boolean,
+    points: Number
   },
   computed: {
     affordable() {
-      return this.balance - this.product.cost >= 0
+      return this.points - this.product.cost >= 0
     }
   },
   methods: {
@@ -78,7 +83,7 @@ export default {
       margin-top: 5px;
       margin-bottom: 10px;
     }
-    .price {
+    .cost {
       font-weight: 600;
       position: absolute;
       right: 10px;

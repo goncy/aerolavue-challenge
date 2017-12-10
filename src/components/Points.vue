@@ -1,9 +1,9 @@
 <template>
-  <div id="points" @click="!$root.$data.loading.transaction && add(500)">
+  <div id="points" @click="!loading && add(500)">
     <touchable>
       <transition name="loadable-points" mode="out-in">
-        <spinner class="spinner" v-if="$root.$data.loading.transaction" />
-        <span v-if="!$root.$data.loading.transaction">{{$root.$data.user.points}}</span>
+        <spinner class="spinner" v-if="loading" />
+        <span v-if="!loading">{{points}}</span>
       </transition>
       <coin class="coin"></coin>
     </touchable>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 import Touchable from "./Touchable"
 import Spinner from "./Spinner"
 import Coin from "./Coin"
@@ -18,12 +20,16 @@ import Coin from "./Coin"
 export default {
   name: "Points",
   components: { Touchable, Coin, Spinner },
+  computed: mapState({
+    loading: state => state.loading,
+    points: state => state.user.points
+  }),
   methods: {
     add(points) {
-      this.$root.$data.loading.transaction = true
+      this.$store.commit("startTransaction")
       setTimeout(() => {
-        this.$root.$data.user.points += points
-        this.$root.$data.loading.transaction = false
+        this.$store.commit("addPoints", points)
+        this.$store.commit("stopTransaction")
       }, 5000)
     }
   }

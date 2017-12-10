@@ -1,7 +1,7 @@
 <template>
   <div id="products-filters">
     <div class="count">
-      <span class="bold">{{count}}</span> PRODUCTS
+      <span class="bold">{{products.length}}</span> PRODUCTS
     </div>
     <div class="sorts">
       <touchable @click.native="setSort('initial')" class="sort" :type="getType('initial')">Most recent</touchable>
@@ -12,20 +12,17 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex"
+
 import Touchable from "../../components/Touchable"
 
 export default {
   components: { Touchable },
-  props: {
-    count: Number,
-    selectedSort: String
-  },
+  computed: mapState(["sort", "products"]),
   methods: {
+    ...mapMutations(["setSort"]),
     getType(sort) {
-      return this.selectedSort === sort ? "primary" : "default"
-    },
-    setSort(by) {
-      this.$emit("setSort", by)
+      return this.sort === sort ? "primary" : "default"
     }
   }
 }

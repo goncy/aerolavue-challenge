@@ -2,46 +2,23 @@
   <div id="products">
     <products-header></products-header>
     <div class="presentation">
-      <products-filters
-        @setSort="setSort"
-        :selectedSort="selectedSort"
-        :count="products.length"
-      />
+      <products-filters />
       <hr>
-      <products-list
-        @setProduct="setProduct"
-        :products="products"
-        :selectedProduct="selectedProduct"
-        :selectedSort="selectedSort"
-        :balance="user.points"
-      />
+      <products-list />
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 import ProductsHeader from "./ProductsHeader"
 import ProductsFilters from "./ProductsFilters"
 import ProductsList from "./products-list/ProductsList"
 
 export default {
   components: { ProductsHeader, ProductsFilters, ProductsList },
-  data() {
-    return {
-      user: this.$root.$data.user,
-      products: this.$root.$data.products,
-      selectedSort: "initial",
-      selectedProduct: null
-    }
-  },
-  methods: {
-    setSort(sort) {
-      this.selectedSort = sort
-    },
-    setProduct(selectedProduct) {
-      this.selectedProduct = selectedProduct
-    }
-  }
+  computed: mapState(["products"])
 }
 </script>
 

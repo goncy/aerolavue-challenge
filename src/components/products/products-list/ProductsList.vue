@@ -1,33 +1,29 @@
 <template>
   <transition-group id="products-list">
     <products-list-item
-      v-for="product in sortedProducts(products)"
-      @click.native="setProduct(product._id)"
-      :selected="product._id === selectedProduct"
-      :key="product._id"
-      :product="product"
-      :balance="balance"
+      v-for="item in sortedProducts(products)"
+      @click.native="setProduct(item._id)"
+      :key="item._id"
+      :selected="item._id === product"
+      :product="item"
+      :points="user.points"
+      :loading="loading"
     />
   </transition-group>
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex"
+
 import ProductsListItem from "./ProductsListItem"
 
 export default {
   components: { ProductsListItem },
-  props: {
-    balance: Number,
-    products: Array,
-    selectedProduct: String,
-    selectedSort: String
-  },
+  computed: mapState(["sort", "product", "products", "user", "loading"]),
   methods: {
-    setProduct(product) {
-      this.$emit("setProduct", product)
-    },
+    ...mapMutations(["setProduct"]),
     sortedProducts(products) {
-      switch (this.selectedSort) {
+      switch (this.sort) {
         case "lowest_price": {
           return products.concat().sort((a, b) => a.cost - b.cost)
         }

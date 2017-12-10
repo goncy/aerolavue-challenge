@@ -1,7 +1,4 @@
 {
-  "loading": {
-    "transaction": false
-  },
   "user": {
     "_id": "5a0cf6cee496000060d00ac6",
     "name": "John Kite",
