@@ -1,0 +1,11 @@
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(15px) rotateY(30deg) rotateX(10deg);}
+  100% {transform: translateY(0);}
+}
+
+@keyframes flip {
+  0% {transform: rotateY(0deg);}
+  40% {transform: rotateY(720deg);}
+  100% {transform: rotateY(720deg);}
+}

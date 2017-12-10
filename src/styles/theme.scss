@@ -1,0 +1,24 @@
+$orange: #FF6E05;
+$blue: #0ad4fa;
+$white: #FFF;
+$grey-100: #F8F8F8;
+$grey-200: #EAEAEA;
+$grey-400: #E9EBF1;
+$grey-600: #a3a3a3;
+$grey-800: #616161;
+
+$primary: $orange !default;
+
+.primary {
+  background-color: $primary;
+  color: $white;
+  &-inverted {
+    background-color: $white;
+    color: $primary;
+  }
+}
+
+.default {
+  background-color: $grey-400;
+  color: $grey-800;
+}
