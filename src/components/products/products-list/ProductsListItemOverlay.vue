@@ -58,7 +58,7 @@ export default {
   z-index: 3;
   width: 100%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 3px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,7 @@ export default {
     font-size: 20px;
     transition: all .25s;
     .spinner {
-      padding: 7.5px 41px;
+      padding: 7.5px 40px;
     }
     // Load animations
     .redeem-button-enter-active,

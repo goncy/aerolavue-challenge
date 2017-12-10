@@ -1,9 +1,7 @@
 <template>
   <div id="products-filters">
     <div class="count">
-      <span>
-        <span class="bold">{{count}}</span> PRODUCTS
-      </span>
+      <span class="bold">{{count}}</span> PRODUCTS
     </div>
     <div class="sorts">
       <touchable @click.native="setSort('initial')" class="sort" :type="getType('initial')">Most recent</touchable>
@@ -48,6 +46,10 @@ export default {
   .count {
     color: $grey-800;
     font-size: 24px;
+
+    .bold {
+      font-weight: 700;
+    }
   }
 
   .sorts {

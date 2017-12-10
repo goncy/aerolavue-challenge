@@ -1,5 +1,5 @@
 <template>
-  <div id="products-list-item" :class="['elevation-2', {selected, affordable}]">
+  <div id="products-list-item" :class="{selected, affordable}">
     <overlay :balance="balance" :cost="product.cost" :class="{selected, affordable}"></overlay>
     <div class="content">
       <touchable :type="affordable ? 'primary-inverted' : 'default'" :class="['price', {affordable}]">
@@ -40,13 +40,15 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
 
 #products-list-item {
+  @include elevation-2;
   position: relative;
   cursor: pointer;
   border: 1px solid $white;
   background-color: $white;
-  border-radius: 2px;
+  border-radius: 3px;
   width: 100%;
   height: 100%;
   min-width: 200px;
@@ -57,8 +59,9 @@ export default {
     transform: scale(1.025);
   }
   &.selected {
+    @include elevation-3;
     transform: scale(1.1);
-    border: none;
+    border: 0;
   }
   .content {
     padding: 10px;

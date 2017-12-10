@@ -1,12 +1,13 @@
 <template>
   <div id="products-header">
-    <h1 class="title truncated">Electronics</h1>
+    <h1 class="title">Electronics</h1>
     <div class="overlay"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
 @import "../../styles/responsive.scss";
 
 #products-header {
@@ -19,6 +20,7 @@
   align-items: flex-end;
   position: relative;
   .title {
+    @include truncated;
     z-index: 2;
     font-size: 3em;
     font-weight: 700;

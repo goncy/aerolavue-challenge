@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <loader v-if="loading"></loader>
-    <layout v-if="!loading">
-      <router-view/>
-    </layout>
+    <div class="layout" v-else>
+      <top-bar></top-bar>
+      <products></products>
+    </div>
   </div>
 </template>
 
@@ -11,11 +12,12 @@
 // import api from "./services/api"
 
 import Loader from "./components/layout/Loader"
-import Layout from "./components/layout/Layout"
+import TopBar from "./components/layout/TopBar"
+import Products from "./components/products/Products"
 
 export default {
   name: "App",
-  components: { Loader, Layout },
+  components: { Loader, Products, TopBar },
 
   data() {
     return {
@@ -40,6 +42,7 @@ export default {
 
 <style lang="scss">
 @import "./styles/theme.scss";
+@import "./styles/mixins.scss";
 @import "./styles/globals.scss";
 @import "./styles/responsive.scss";
 
@@ -55,6 +58,13 @@ body {
   #app {
     display: flex;
     justify-content: center;
+
+    .layout {
+      @include elevation-1;
+      background-color: $white;
+      max-width: 1600px;
+      width: 100%;
+    }
   }
 }
 
