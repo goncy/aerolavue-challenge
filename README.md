@@ -21,7 +21,6 @@ const [user, history, products] = await [
 2. Estados sincronizados.
 > ![01](./doc-files/sync.gif)
 
-
 3. Responsive y animaciones.
 > ![02](./doc-files/responsive.gif)
 
