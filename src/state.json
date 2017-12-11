@@ -4,7 +4,20 @@
     "name": "John Kite",
     "points": 500,
     "__v": 0,
-    "redeemHistory": [],
+    "redeemHistory": [
+      {
+        "productId": "5a0b35c1734d1d08bf7084c3",
+        "name": "iPhone 8",
+        "cost": 800,
+        "category": "Phones",
+        "_id": "5a09ac59d867f70a56c0d7b2",
+        "createDate": "2017-11-13T14:33:05.920Z",
+        "img": {
+          "url": "https://aerolab-challenge.now.sh/images/iPhone8-x1.png",
+          "hdUrl": "https://aerolab-challenge.now.sh/images/iPhone8-x2.png"
+        }
+      }
+    ],
     "createDate": "2017-11-16T02:24:14.371Z"
   },
   "products": [

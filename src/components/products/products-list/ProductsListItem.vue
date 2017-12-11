@@ -3,7 +3,7 @@
     <overlay
       :loading="loading"
       :points="points"
-      :cost="product.cost"
+      :product="product"
       :class="{selected, affordable}"
     />
     <div class="content">
@@ -11,7 +11,7 @@
         <span>{{product.cost}}</span>
         <coin v-if="affordable" class="coin" width="20" height="20"></coin>
       </touchable>
-      <img class="image" :src="product.img.url" @error="imageFailed" :alt="product.name">
+      <fallback-image :src="product.img.url" :alt="product.name" />
       <hr>
       <div class="bottom">
         <span class="category">{{product.category}}</span>
@@ -24,11 +24,12 @@
 <script>
 import Coin from "../../../components/Coin"
 import Touchable from "../../../components/Touchable"
+import FallbackImage from "../../../components/FallbackImage"
 
 import Overlay from "./ProductsListItemOverlay"
 
 export default {
-  components: { Coin, Touchable, Overlay },
+  components: { Coin, Touchable, Overlay, FallbackImage },
   props: {
     product: Object,
     selected: Boolean,
@@ -38,12 +39,6 @@ export default {
   computed: {
     affordable() {
       return this.points - this.product.cost >= 0
-    }
-  },
-  methods: {
-    imageFailed(event) {
-      event.target.src =
-        "http://via.placeholder.com/252x182/ffffff?text=NO%20IMAGE"
     }
   }
 }
@@ -98,11 +93,6 @@ export default {
           margin-left: 2.5px;
         }
       }
-    }
-    .image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
     .bottom {
       display: flex;

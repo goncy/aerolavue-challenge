@@ -21,7 +21,7 @@ export default {
 
   data() {
     return {
-      loading: false,
+      loading: true,
       error: null
     }
   },
@@ -35,7 +35,7 @@ export default {
 
     setTimeout(() => {
       this.loading = false
-    }, 0) // -> DAFAQ IS THIS? - Esto es un demo y queria presumir mi bello loader, ADMIRALO
+    }, 5000) // -> DAFAQ IS THIS? - Esto es un demo y queria presumir mi bello loader, ADMIRALO
   }
 }
 </script>

@@ -6,7 +6,7 @@
     <div class="balance">
       <div class="content">
         <span class="current">{{points}}</span>
-        <span class="cost">- {{cost}}</span>
+        <span class="cost">- {{product.cost}}</span>
         <hr>
         <div class="final">
           <span>{{balance}}</span>
@@ -38,13 +38,13 @@ import Spinner from "../../../components/Spinner"
 export default {
   components: { Coin, Touchable, Spinner },
   props: {
-    cost: Number,
+    product: Object,
     points: Number,
     loading: Boolean
   },
   computed: {
     balance() {
-      return this.points - this.cost
+      return this.points - this.product.cost
     }
   },
   methods: {
@@ -54,7 +54,8 @@ export default {
 
       this.$store.commit("startTransaction")
       setTimeout(() => {
-        this.$store.commit("substractPoints", this.cost)
+        this.$store.commit("substractPoints", this.product.cost)
+        this.$store.commit("addToHistory", this.product)
         this.$store.commit("stopTransaction")
       }, 5000)
     }

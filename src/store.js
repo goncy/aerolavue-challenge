@@ -37,6 +37,9 @@ const store = new Vuex.Store({
     },
     unsetProduct(state) {
       state.product = null
+    },
+    addToHistory(state, product) {
+      state.user.redeemHistory.push(product)
     }
   }
 })

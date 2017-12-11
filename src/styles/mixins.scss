@@ -7,7 +7,7 @@
 }
 
 @mixin elevation-3 {
-  box-shadow: 3px 3px 20px rgba($black, 0.45);
+  box-shadow: 0 0 40px rgba($black, 0.4);
 }
 
 @mixin truncated {
