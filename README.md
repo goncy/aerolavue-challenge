@@ -4,30 +4,30 @@ Este proyecto es el resultado del [Aerolab Coding Challenge](https://aerolab.co/
 
 ## Algunos detalles que tomé en cuenta
 1. API Helpers simples.
-  ```js
-  const [user, history, products] = await [
-      await api.user.me(),
-      await api.user.history(),
-      await api.products()
-    ]
+```js
+const [user, history, products] = await [
+    await api.user.me(),
+    await api.user.history(),
+    await api.products()
+  ]
 
-    this.setUser(user)
-    this.setHistory(history)
-    this.setProducts(products)
-  ```
+  this.setUser(user)
+  this.setHistory(history)
+  this.setProducts(products)
+```
 
 2. Estados sincronizados.
-![01](./doc-files/sync.gif)
+> ![01](./doc-files/sync.gif)
 
 
 3. Responsive y animaciones.
-![02](./doc-files/responsive.gif)
+> ![02](./doc-files/responsive.gif)
 
 4. Adaptabilidad.
-![03](./doc-files/adapt.gif)
+> ![03](./doc-files/adapt.gif)
 
 5. Edge cases, como intentar de redeemear otro item mientras otro esta en proceso o actualizar el item seleccionado cuando se obtienen mas monedas.
-![03](./doc-files/edge.gif)
+> ![03](./doc-files/edge.gif)
 
 ___
 ### 🗣 Opinión sobre Vue
