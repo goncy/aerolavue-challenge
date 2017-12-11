@@ -24,11 +24,14 @@ const [user, history, products] = await [
 3. Responsive y animaciones.
 > ![02](./doc-files/responsive.gif)
 
-4. Adaptabilidad.
-> ![03](./doc-files/adapt.gif)
+4. Pocas dependencias, solo el framework con su state management y una libreria para los api calls. CSS y maquetado, todo a mano.
+> ![03](./doc-files/deps.png)
 
-5. Edge cases, como intentar de redeemear otro item mientras otro esta en proceso o actualizar el item seleccionado cuando se obtienen mas monedas.
-> ![03](./doc-files/edge.gif)
+5. Adaptabilidad.
+> ![04](./doc-files/adapt.gif)
+
+6. Edge cases, como intentar de redeemear otro item mientras otro esta en proceso o actualizar el item seleccionado cuando se obtienen mas monedas.
+> ![05](./doc-files/edge.gif)
 
 ___
 ### 🗣 Opinión sobre Vue
