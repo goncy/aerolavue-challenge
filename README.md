@@ -2,6 +2,8 @@
 
 Este proyecto es el resultado del [Aerolab Coding Challenge](https://aerolab.co/coding-challenge), decidí hacerlo en Vue siemplemente para probarlo, despues de hacer un [workshop de Vue](https://github.com/ianaya89/workshop-vuejs).
 
+[DEMO](https://dist-effukxtxim.now.sh)
+
 ## Algunos detalles que tomé en cuenta
 1. API Helpers simples.
 ```js
