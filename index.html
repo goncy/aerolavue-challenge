@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en_US">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title class="next-head">Aerolab Coding Challenge - Goncy</title>
-  <link rel="icon" type="image/png" href="/static/favicon.ico">
+  <link rel="shortcut icon" type="image/png" href="/static/favicon.ico">
+  <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
   <meta name="theme-color" content="#FFFFFF">
   <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="x-rim-auto-match" content="none">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
@@ -24,13 +25,18 @@
   <meta property="og:description" content="Use your points to redeem items">
   <meta property="og:locale " content="es_LA">
   <meta property="og:image" content="/static/og-image.jpg">
+  <meta name="twitter:title" content="Aerolab Coding Challenge - Goncy">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="goncy">
-  <meta name="twitter:creator" content="goncy">
+  <meta name="twitter:site" content="@goncy">
+  <meta name="twitter:creator" content="@goncy">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 </head>
 <body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
   <div id="app"></div>
+  <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
   <!-- built files will be auto injected -->
 </body>
 </html>

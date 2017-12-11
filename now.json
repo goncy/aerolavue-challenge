@@ -1,0 +1,5 @@
+{
+  "name": "Aerolab Challenge",
+  "alias": "aerolavue-challenge.now.sh",
+  "files": ["dist"]
+}

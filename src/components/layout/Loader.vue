@@ -2,7 +2,7 @@
   <transition appear name="loader-animation" mode="out-in">
     <div id="loader">
       <transition appear name="kite-animation">
-        <kite animation="infinite" />
+        <kite color="white" animation="infinite" />
       </transition>
     </div>
   </transition>
@@ -27,7 +27,7 @@ export default {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: $grey-400;
+  background-color: $primary;
   display: flex;
   justify-content: center;
   align-items: center;
