@@ -2,7 +2,7 @@
 
 Este proyecto es el resultado del [Aerolab Coding Challenge](https://aerolab.co/coding-challenge), decidí hacerlo en Vue siemplemente para probarlo, despues de hacer un [workshop de Vue](https://github.com/ianaya89/workshop-vuejs).
 
-[DEMO](https://dist-effukxtxim.now.sh)
+[DEMO](https://aerolavue-challenge.now.sh/)
 
 ## Algunos detalles que tomé en cuenta
 1. API Helpers simples.
@@ -35,7 +35,6 @@ const [user, history, products] = await [
 
 ___
 ### 🗣 Opinión sobre Vue
-Creo que Vue es una buena opción para casos en los que las animaciónes sean prioridad, o la velocidad de desarrollo sea muy importante, encuentro la implementación de Flux muy llevadera, tiene buen tooling y esta copado que la misma entidad se encargue de todo el ecosistema, sin embargo hay casos en los que todas estas herramientas empiezan a colisionar o no dan un resultado muy amigable/escalable. Por ejemplo:
 
 ### Pros
 * Bueno para trabajar con animaciones.
