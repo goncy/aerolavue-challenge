@@ -1,6 +1,6 @@
 <template>
-  <div id="coin" :style="{width: width + 'px', height: height + 'px'}">
-    <img v-once class="image" :width="width" :height="height" src="../assets/coin.svg">
+  <div id="coin" :style="{width: size + 'px', height: size + 'px'}">
+    <img v-once :class="{animated}" class="image" :width="size" :height="size" src="../assets/coin.svg">
   </div>
 </template>
 
@@ -8,14 +8,11 @@
 export default {
   name: "Coin",
   props: {
-    width: {
+    size: {
       type: String,
       default: "35"
     },
-    height: {
-      type: String,
-      default: "35"
-    }
+    animated: Boolean
   }
 }
 </script>
@@ -30,7 +27,9 @@ export default {
 }
 
 .image {
-  animation: flip 15s infinite;
-  animation-delay: 5s;
+  &.animated {
+    animation: flip 15s infinite;
+    animation-delay: 5s;
+  }
 }
 </style>

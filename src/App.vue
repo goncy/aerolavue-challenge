@@ -21,7 +21,7 @@ export default {
 
   data() {
     return {
-      loading: true,
+      loading: false,
       error: null
     }
   },
@@ -35,7 +35,7 @@ export default {
 
     setTimeout(() => {
       this.loading = false
-    }, 5000) // -> DAFAQ IS THIS? - Esto es un demo y queria presumir mi bello loader, ADMIRALO
+    }, 0) // -> DAFAQ IS THIS? - Esto es un demo y queria presumir mi bello loader, ADMIRALO
   }
 }
 </script>
@@ -49,6 +49,7 @@ export default {
 body {
   margin: 0;
   padding: 25px;
+  box-sizing: border-box;
   letter-spacing: -0.15px;
   background-color: $grey-400;
   font-family: 'Source Sans Pro', sans-serif;

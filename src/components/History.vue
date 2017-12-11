@@ -26,7 +26,7 @@
           <div class="cost">
             {{item.cost}}
           </div>
-          <coin class="coin" width="23px" height="23px" />
+          <coin class="coin" size="23" />
         </div>
       </div>
     </transition-group>
@@ -124,7 +124,7 @@ export default {
         }
 
         .coin {
-          margin-bottom: -6px;
+          margin-bottom: -2px;
         }
       }
     }

@@ -9,7 +9,7 @@
     <div class="content">
       <touchable :type="affordable ? 'primary-inverted' : 'default'" :class="['cost', {affordable}]">
         <span>{{product.cost}}</span>
-        <coin v-if="affordable" class="coin" width="20" height="20"></coin>
+        <coin v-if="affordable" class="coin" size="18" />
       </touchable>
       <fallback-image :src="product.img.url" :alt="product.name" />
       <hr>
@@ -91,6 +91,7 @@ export default {
           z-index: 1;
           perspective: 500px;
           margin-left: 2.5px;
+          margin-top: -2px;
         }
       }
     }

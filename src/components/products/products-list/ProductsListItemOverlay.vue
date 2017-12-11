@@ -10,7 +10,7 @@
         <hr>
         <div class="final">
           <span>{{balance}}</span>
-          <coin class="coin" width="25" height="25"></coin>
+          <coin animated class="coin" size="25" />
         </div>
       </div>
     </div>

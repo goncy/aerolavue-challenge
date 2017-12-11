@@ -1,11 +1,13 @@
 <template>
   <div id="points" @click="!loading && add(500)">
     <touchable>
-      <transition name="loadable-points" mode="out-in">
-        <spinner class="spinner" v-if="loading" />
-        <span v-if="!loading">{{points}}</span>
-      </transition>
-      <coin class="coin"></coin>
+      <div class="points">
+        <transition name="loadable-points" mode="out-in">
+          <spinner v-if="loading" class="spinner" />
+          <span v-else>{{points}}</span>
+        </transition>
+      </div>
+      <coin animated />
     </touchable>
   </div>
 </template>
@@ -44,8 +46,8 @@ export default {
   display: flex;
   align-items: center;
 
-  .coin {
-    margin-left: 5px;
+  .points {
+    margin-right: 5px;
   }
 
   .spinner {
