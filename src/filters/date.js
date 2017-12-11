@@ -1,7 +1,7 @@
-import moment from "moment"
-
 export default function formatDate(value) {
   if (value) {
-    return moment(String(value)).format("MM/DD/YYYY hh:mm")
+    const date = new Date(value)
+    return `${date.getMonth() +
+      1}/${date.getDate()}/${date.getFullYear()} ${date.getUTCHours()}:${date.getUTCMinutes()}`
   }
 }

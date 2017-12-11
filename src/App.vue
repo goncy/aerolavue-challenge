@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <loader v-if="loading"></loader>
-    <div class="layout" v-else>
+    <div v-else class="layout">
       <top-bar></top-bar>
       <products></products>
     </div>
@@ -9,7 +9,9 @@
 </template>
 
 <script>
-// import api from "./services/api"
+import { mapMutations } from "vuex"
+
+import api from "./services/api"
 
 import Loader from "./components/layout/Loader"
 import TopBar from "./components/layout/TopBar"
@@ -18,24 +20,28 @@ import Products from "./components/products/Products"
 export default {
   name: "App",
   components: { Loader, Products, TopBar },
-
   data() {
     return {
-      loading: false,
-      error: null
+      loading: true
     }
   },
-
+  methods: mapMutations(["setUser", "setHistory", "setProducts"]),
   async mounted() {
     try {
-      // this.user = await api.user.me()
+      const [user, history, products] = await [
+        await api.user.me(),
+        await api.user.history(),
+        await api.products()
+      ]
+
+      this.setUser(user)
+      this.setHistory(history)
+      this.setProducts(products)
     } catch (err) {
-      this.error = err
+      console.log(err) // SWALLOW BITACH
     }
 
-    setTimeout(() => {
-      this.loading = false
-    }, 0) // -> DAFAQ IS THIS? - Esto es un demo y queria presumir mi bello loader, ADMIRALO
+    this.loading = false
   }
 }
 </script>

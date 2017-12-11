@@ -13,12 +13,12 @@ const DEFAULT_OPTIONS = {
 }
 
 const api = {
-  request: async function({ url, method, body = {}, options = {} }) {
+  request: async function({ url, method, data = {}, options = {} }) {
     try {
       const response = await axios(BASE_URL + url, {
         ...DEFAULT_OPTIONS,
         method,
-        body
+        data
       })
       if (response.status !== 200) throw response
       return response.data
@@ -50,7 +50,7 @@ const api = {
       return api.request({
         url: "/user/points",
         method: "POST",
-        body: { amount }
+        data: { amount }
       })
     },
     history: function() {
@@ -83,7 +83,7 @@ const api = {
     return api.request({
       url: "/redeem",
       method: "POST",
-      body: { productId }
+      data: { productId }
     })
   },
   products: function() {

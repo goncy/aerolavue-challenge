@@ -1,10 +1,14 @@
 <template>
   <div id="top-bar">
     <div class="bar">
-      <kite animation="hover" width="40" height="40"></kite>
+      <kite animation="hover" size="40" />
       <div class="information">
         <span class="name">{{user.name}}</span>
-        <history-icon :class="['history-icon', {'active': showHistory}]" @click.native="toggleHistory" />
+        <history-icon
+          class="history-button"
+          @click.native="toggleHistory"
+          :class="{'active': showHistory}"
+        />
         <points />
       </div>
     </div>
@@ -75,11 +79,10 @@ export default {
       display: flex;
       align-items: center;
 
-      .history-icon {
+      .history-button {
         transition: all 0.5s;
         padding: 6px;
         margin: 0 5px;
-        border: 1px solid transparent;
         border-radius: 100%;
         background-color: white;
 

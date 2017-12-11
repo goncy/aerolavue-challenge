@@ -15,7 +15,7 @@
       </div>
     </div>
     <touchable
-      @click.native="redeem"
+      @click.native="redeemProduct(product)"
       v-if="balance >= 0"
       class="redeem"
       type="primary-inverted"
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex"
+import { mapMutations, mapActions } from "vuex"
 
 import Coin from "../../../components/Coin"
 import Touchable from "../../../components/Touchable"
@@ -49,16 +49,7 @@ export default {
   },
   methods: {
     ...mapMutations(["unsetProduct"]),
-    redeem() {
-      if (this.loading) return
-
-      this.$store.commit("startTransaction")
-      setTimeout(() => {
-        this.$store.commit("substractPoints", this.product.cost)
-        this.$store.commit("addToHistory", this.product)
-        this.$store.commit("stopTransaction")
-      }, 5000)
-    }
+    ...mapActions(["redeemProduct"])
   }
 }
 </script>

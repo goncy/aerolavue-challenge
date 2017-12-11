@@ -1,5 +1,5 @@
 <template>
-  <div id="points" @click="!loading && add(500)">
+  <div id="points" @click="!loading && addPoints(1000)">
     <touchable>
       <div class="points">
         <transition name="loadable-points" mode="out-in">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState, mapActions } from "vuex"
 
 import Touchable from "./Touchable"
 import Spinner from "./Spinner"
@@ -26,15 +26,7 @@ export default {
     loading: state => state.loading,
     points: state => state.user.points
   }),
-  methods: {
-    add(points) {
-      this.$store.commit("startTransaction")
-      setTimeout(() => {
-        this.$store.commit("addPoints", points)
-        this.$store.commit("stopTransaction")
-      }, 5000)
-    }
-  }
+  methods: mapActions(["addPoints"])
 }
 </script>
 
