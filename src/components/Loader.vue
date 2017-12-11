@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Kite from "../Kite"
+import Kite from "./Kite"
 
 export default {
   name: "Loader",
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/theme.scss";
+@import "../styles/theme.scss";
 
 #loader {
   z-index: 2; // 1 is the products header text to override the overlay

@@ -13,8 +13,8 @@ import { mapMutations } from "vuex"
 
 import api from "./services/api"
 
-import Loader from "./components/layout/Loader"
-import TopBar from "./components/layout/TopBar"
+import Loader from "./components/Loader"
+import TopBar from "./components/TopBar"
 import Products from "./components/products/Products"
 
 export default {

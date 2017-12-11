@@ -13,7 +13,7 @@
       </div>
     </div>
     <div :class="['history', {'active': showHistory}]">
-      <history />
+      <history-list />
     </div>
   </div>
 </template>
@@ -21,14 +21,14 @@
 <script>
 import { mapState } from "vuex"
 
-import Kite from "../Kite"
-import Points from "../Points"
-import History from "../History"
-import HistoryIcon from "../HistoryIcon"
+import Kite from "./Kite"
+import Points from "./Points"
+import HistoryList from "./history-list/HistoryList"
+import HistoryIcon from "./HistoryIcon"
 
 export default {
   name: "TopBar",
-  components: { Kite, Points, History, HistoryIcon },
+  components: { Kite, Points, HistoryList, HistoryIcon },
   props: {
     name: String
   },
@@ -47,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/theme.scss";
-@import "../../styles/mixins.scss";
+@import "../styles/theme.scss";
+@import "../styles/mixins.scss";
 
 #top-bar {
   .history {
