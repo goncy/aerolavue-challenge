@@ -17,6 +17,7 @@ import ProductsFilters from "./ProductsFilters"
 import ProductsList from "./products-list/ProductsList"
 
 export default {
+  name: "Products",
   components: { ProductsHeader, ProductsFilters, ProductsList },
   computed: mapState(["products"])
 }

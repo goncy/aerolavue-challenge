@@ -18,6 +18,7 @@ import { mapState, mapMutations } from "vuex"
 import ProductsListItem from "./ProductsListItem"
 
 export default {
+  name: "ProductsList",
   components: { ProductsListItem },
   computed: mapState(["sort", "product", "products", "user", "loading"]),
   methods: {

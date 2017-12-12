@@ -1,6 +1,13 @@
 <template>
   <div id="coin" :style="{width: size + 'px', height: size + 'px'}">
-    <img v-once :class="{animated}" class="image" :width="size" :height="size" src="../assets/coin.svg">
+    <img
+      v-once
+      :class="{animated}"
+      class="image"
+      :width="size"
+      :height="size"
+      src="../assets/coin.svg"
+    />
   </div>
 </template>
 

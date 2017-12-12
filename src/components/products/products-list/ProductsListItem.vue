@@ -7,11 +7,21 @@
       :class="{selected, affordable}"
     />
     <div class="content">
-      <touchable :type="affordable ? 'primary-inverted' : 'default'" :class="['cost', {affordable}]">
+      <touchable
+        :type="affordable ? 'primary-inverted' : 'default'"
+        :class="['cost', {affordable}]"
+      >
         <span>{{product.cost}}</span>
-        <coin v-if="affordable" class="coin" size="18" />
+        <coin
+          v-if="affordable"
+          class="coin"
+          size="18"
+        />
       </touchable>
-      <fallback-image :src="product.img.url" :alt="product.name" />
+      <fallback-image
+        :src="product.img.url"
+        :alt="product.name"
+      />
       <hr>
       <div class="bottom">
         <span class="category">{{product.category}}</span>
@@ -29,6 +39,7 @@ import FallbackImage from "../../../components/FallbackImage"
 import Overlay from "./ProductsListItemOverlay"
 
 export default {
+  name: "ProductsListItem",
   components: { Coin, Touchable, Overlay, FallbackImage },
   props: {
     product: Object,

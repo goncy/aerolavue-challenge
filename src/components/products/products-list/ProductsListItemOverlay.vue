@@ -36,6 +36,7 @@ import Touchable from "../../../components/Touchable"
 import Spinner from "../../../components/Spinner"
 
 export default {
+  name: "ProductsListItemOverlay",
   components: { Coin, Touchable, Spinner },
   props: {
     product: Object,

@@ -31,6 +31,7 @@ import FallbackImage from "../FallbackImage"
 import Coin from "../Coin"
 
 export default {
+  name: "HistoryListItem",
   components: { FallbackImage, Coin },
   props: {
     item: Object

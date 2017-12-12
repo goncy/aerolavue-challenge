@@ -4,9 +4,27 @@
       <span class="bold">{{products.length}}</span> PRODUCTS
     </div>
     <div class="sorts">
-      <touchable @click.native="setSort('initial')" class="sort" :type="getType('initial')">Most recent</touchable>
-      <touchable @click.native="setSort('lowest_price')" class="sort" :type="getType('lowest_price')">Lowest price</touchable>
-      <touchable @click.native="setSort('highest_price')" class="sort" :type="getType('highest_price')">Highest price</touchable>
+      <touchable
+        @click.native="setSort('initial')"
+        class="sort"
+        :type="getType('initial')"
+      >
+        Most recent
+      </touchable>
+      <touchable
+        @click.native="setSort('lowest_price')"
+        class="sort"
+        :type="getType('lowest_price')"
+      >
+        Lowest price
+      </touchable>
+      <touchable
+        @click.native="setSort('highest_price')"
+        class="sort"
+        :type="getType('highest_price')"
+      >
+        Highest price
+      </touchable>
     </div>
   </div>
 </template>
@@ -17,6 +35,7 @@ import { mapState, mapMutations } from "vuex"
 import Touchable from "../../components/Touchable"
 
 export default {
+  name: "ProductsFilters",
   components: { Touchable },
   computed: mapState(["sort", "products"]),
   methods: {

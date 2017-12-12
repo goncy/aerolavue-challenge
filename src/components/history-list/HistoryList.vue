@@ -4,7 +4,11 @@
       You don't have a redeem history
     </div>
     <transition-group v-else name="list" class="grid">
-      <history-list-item v-for="item in user.redeemHistory" :key="item._id" :item="item" />
+      <history-list-item
+        v-for="item in user.redeemHistory"
+        :key="item._id"
+        :item="item"
+      />
     </transition-group>
   </div>
 </template>
@@ -15,6 +19,7 @@ import { mapState } from "vuex"
 import HistoryListItem from "./HistoryListItem"
 
 export default {
+  name: "HistoryList",
   components: { HistoryListItem },
   computed: mapState(["user"])
 }
