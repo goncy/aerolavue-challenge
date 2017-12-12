@@ -44,8 +44,8 @@ ___
 * Facil para prototipar.
 
 ### Cons
-* Pasar callbacks a componentes anidados, mas de un nivel.
-* Aplicar atributos directamente a un componente importado.
-* Combinar metodos de Vuex con metodos propios del componente.
+* Pasar callbacks a componentes anidados, mas de un nivel no es simple.
+* Aplicar atributos directamente a un componente importado los sobreescribe (depende del atributo).
+* Combinar metodos de Vuex con metodos propios del componente (los metodos de vuex no son usables desde los metodos del componente).
 
 Hay muchas cosas mas para comentar sobre todo esto, pero soy un readme y no un blog post, capaz la próxima!
