@@ -29,6 +29,7 @@ export default {
   hr {
     margin-bottom: 20px;
   }
+
   .presentation {
     background-color: $grey-100;
     padding: 20px;

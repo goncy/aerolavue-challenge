@@ -19,6 +19,7 @@
   display: flex;
   align-items: flex-end;
   position: relative;
+
   .title {
     @include truncated;
     z-index: 2;
@@ -29,6 +30,7 @@
     padding: 10px 20px;
     position: absolute;
   }
+
   .overlay {
     z-index: 1;
     width: 100%;

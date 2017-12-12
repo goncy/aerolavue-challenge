@@ -60,24 +60,29 @@ export default {
   min-width: 200px;
   min-height: 200px;
   transition: all .25s;
+
   &:hover {
     border: 1px solid rgba($primary, 0.5);
     transform: scale(1.025);
   }
+
   &.selected {
     @include elevation-3;
     transform: scale(1.1);
     border: 0;
   }
+
   .content {
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     hr {
       margin-top: 5px;
       margin-bottom: 10px;
     }
+
     .cost {
       font-weight: 600;
       position: absolute;
@@ -85,8 +90,10 @@ export default {
       display: flex;
       align-items: center;
       border: 1px solid rgba($grey-400, 0.2);
+
       &.affordable {
         border: 1px solid rgba($primary, 0.2);
+
         .coin {
           z-index: 1;
           perspective: 500px;
@@ -95,12 +102,15 @@ export default {
         }
       }
     }
+
     .bottom {
       display: flex;
       flex-direction: column;
+
       .category {
         color: $grey-600;
       }
+
       .name {
         font-weight: 600;
       }

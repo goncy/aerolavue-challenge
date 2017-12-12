@@ -72,13 +72,16 @@ export default {
   pointer-events: none;
   perspective: 500px;
   background-color: rgba($grey-600, 0.9);
+
   &.affordable {
     background-color: rgba($primary, 0.9);
   }
+
   &.selected {
     opacity: 1;
     pointer-events: all;
   }
+
   .close {
     transition: all 0.25s;
     position: absolute;
@@ -91,13 +94,16 @@ export default {
       opacity: 1;
     }
   }
+
   .redeem {
     font-weight: 600;
     font-size: 20px;
     transition: all .25s;
+
     .spinner {
       padding: 7.5px 40px;
     }
+
     // Load animations
     .redeem-button-enter-active,
     .redeem-button-leave-active {
@@ -109,12 +115,14 @@ export default {
       opacity: 0
     }
   }
+
   .balance {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin-bottom: 10px;
+
     .content {
       font-weight: 600;
       font-size: 24px;
@@ -124,14 +132,17 @@ export default {
       justify-content: center;
       align-items: center;
       width: 100px;
+
       hr {
         width: 100%;
         margin: 5px 0;
         border-top: 1px solid $white;
       }
+
       .final {
         display: flex;
         align-items: center;
+
         .coin {
           margin-left: 2.5px;
         }
