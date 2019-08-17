@@ -21,8 +21,8 @@
       type="primary-inverted"
     >
       <transition name="redeem-button" mode="out-in">
-        <span v-if="!loading">REDEEM NOW</span>
-        <spinner class="spinner" v-if="loading" />
+        <spinner v-if="loading" class="spinner" />
+        <span v-else>REDEEM NOW</span>
       </transition>
     </touchable>
   </div>

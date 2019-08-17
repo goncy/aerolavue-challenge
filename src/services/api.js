@@ -2,7 +2,7 @@ import axios from "axios"
 
 const BASE_URL = "https://aerolab-challenge.now.sh"
 const SUPER_SECRET_TOKEN_DO_NOT_CHANGE_OR_YOU_WILL_BE_FIRED =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YTBjZjZjZWU0OTYwMDAwNjBkMDBhYzYiLCJpYXQiOjE1MTA3OTkwNTR9.kyOBKTpZevZFcjkcjT7ZSRwwvQE94VC1eozIz7YgIPs"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDU4MTRlZDhjY2IzMDAwNmRkMDIwMTIiLCJpYXQiOjE1NjYwNTM2MTN9.OhTr3SV7RQVj3aAZLK-yb0RcliewN9DIMwzsNGCHnRk"
 const DEFAULT_OPTIONS = {
   crossDomain: true,
   responseType: "json",
