@@ -16,7 +16,7 @@ const DEFAULT_OPTIONS = {
 
 const api = {
   request: async function({ url, method, data = {}, options = {} }) {
-    if (process.env.mocks) return Promise.resolve(mocks[url]);
+    if (process.env.mocks) return new Promise((resolve) => setTimeout(() => resolve(mocks[url]), 1000));
 
     try {
       const response = await axios(BASE_URL + url, {
