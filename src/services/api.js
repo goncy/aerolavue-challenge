@@ -1,8 +1,10 @@
 import axios from "axios"
 
+import mocks from "./mocks.json"
+
 const BASE_URL = "https://aerolab-challenge.now.sh"
 const SUPER_SECRET_TOKEN_DO_NOT_CHANGE_OR_YOU_WILL_BE_FIRED =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDU4MTRlZDhjY2IzMDAwNmRkMDIwMTIiLCJpYXQiOjE1NjYwNTM2MTN9.OhTr3SV7RQVj3aAZLK-yb0RcliewN9DIMwzsNGCHnRk"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTdlZDZiMzU3MjAyZjAwNmNjYjllZTQiLCJpYXQiOjE1ODUzNzA4MDN9.c9hDXScTXnbasV-ytWS5grG-BciYARKOHaDHjFRtuXE"
 const DEFAULT_OPTIONS = {
   crossDomain: true,
   responseType: "json",
@@ -14,6 +16,8 @@ const DEFAULT_OPTIONS = {
 
 const api = {
   request: async function({ url, method, data = {}, options = {} }) {
+    if (process.env.mocks) return Promise.resolve(mocks[url]);
+
     try {
       const response = await axios(BASE_URL + url, {
         ...DEFAULT_OPTIONS,
